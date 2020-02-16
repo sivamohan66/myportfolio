@@ -8,7 +8,7 @@ server/node_modules
 /coverage
 
 # production
-/server/build
+# /server/build
 
 # environment 
 /server/env
