@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const env = require('./env/environment');
-const key = env.key
+const env = require('../config');
+const key = env.authKey
 const dbName = env.dbName
-const port = env.cosmosPort
+const port = env.port
+const host = env.host
 
 mongoose.Promise = global.Promise;
-const mongoUri = `mongodb://${dbName}:${key}@${dbName}.documents.azure.com:${port}/?ssl=true&replicaSet=globaldb`;
-
+const mongoUri = `mongodb://${dbName}:${key}@${host}:${port}/?ssl=true&replicaSet=globaldb`;
 function connect() {
   try {
     mongoose.connection.openUri(mongoUri)
