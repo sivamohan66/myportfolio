@@ -2,8 +2,8 @@ const config = {};
 
 config.host = process.env.HOST || "[the endpoint URI of your Azure Cosmos DB account]";
 config.authKey = process.env.AUTH_KEY || "[the PRIMARY KEY value of your Azure Cosmos DB account";
-config.port = process.env.PORT
-config.dbName = process.env.dbName
+config.port = process.env.DB_PORT
+config.dbName = process.env.DB_NAME
 
 
 if (config.host.includes("https://localhost:")) {
