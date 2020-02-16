@@ -72,6 +72,9 @@ function onError(error) {
       console.error(bind + ' is already in use');
       process.exit(1);
       break;
+    case 'EADDRNOTAVAIL':
+      console.log(bind + 'Network Error Message');
+      process.exit(1)
     default:
       throw error;
   }
