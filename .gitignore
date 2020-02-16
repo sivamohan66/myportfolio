@@ -1,5 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
-
+# mq6e6yyu4pb5q6fsbrbsbqlldr3yh7rjbjton673etdl7aatfywa
 # dependencies
 /node_modules
 server/node_modules
@@ -8,7 +8,7 @@ server/node_modules
 /coverage
 
 # production
-# /server/build
+/server/build
 
 # environment 
 /server/env
