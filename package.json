@@ -32,7 +32,7 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "10.14"
+    "node": "10.16"
   },
   "proxy": "http://localhost:3001"
 }
