@@ -13,6 +13,7 @@ server/node_modules
 # environment 
 /server/env
 
+pass.txt
 # misc
 .DS_Store
 .env.local
