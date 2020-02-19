@@ -2,19 +2,30 @@
   "name": "express-react-starter",
   "version": "0.1.0",
   "private": true,
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
+    "express-async-errors": "^2.1.0",
     "morgan": "^1.8.2",
     "pug": "^2.0.4",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "cors": "^2.8.4",
+    "winston": "^2.4.0",
+    "winston-mongodb": "^3.0.0",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.5"
   },
   "scripts": {
-    "start": "./server.js"
+    "start": "node server.js",
+    "test": "jest --watchAll --verbose"
   },
-  "homepage": "https://sksingh.azurewebsites.net/",
+  "devDependencies": {
+    "jest": "^22.2.2",
+    "supertest": "^3.0.0"
+  },
   "engines": {
     "node": "10.16"
   }

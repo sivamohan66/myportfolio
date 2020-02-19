@@ -4,28 +4,37 @@
  * Module dependencies.
  */
 
-var app = require('./app');
-var debug = require('debug')('express-react:server');
-var http = require('http');
+let app = require('./app');
+let debug = require('debug')('express-react:server');
+let http = require('http');
+const winston = require("winston");
+require("./startup/logging")();
+require("./startup/cors")(app);
+// require("./startup/routes")(app);
+require("./startup/config")();
+require("./startup/db")();
+// require("./startup/validation")();
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3001');
+let port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+let server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () =>
+  winston.info(`Listening on port ${port}...`)
+);
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -85,8 +94,8 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  let addr = server.address();
+  let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
