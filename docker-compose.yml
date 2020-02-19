@@ -29,4 +29,4 @@ services:
       - ./client/public:/usr/src/client/public
     links:
       - server
-    command: yarn start
+    command: serve -p ${REACT_APP_PORT} -s .
