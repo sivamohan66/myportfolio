@@ -1,16 +1,26 @@
-FROM mhart/alpine-node
+FROM mhart/alpine-node AS builder
 
 # Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /usr/src/client
+WORKDIR /usr/src/client
 
-# Install app dependencies
-COPY server/package.json /usr/src/app/
-RUN npm install
+# Install client dependencies
+COPY package.json /usr/src/client
+RUN yarn
 
-# Bundle app source
-COPY server/ /usr/src/app/
+# Bundle client source
+COPY . /usr/src/client
 
-ENV PORT 80
+RUN yarn run build
 
-CMD [ "npm", "start" ]
+FROM mhart/alpine-node
+RUN yarn global add serve
+WORKDIR /usr/src/client
+COPY --from=builder /usr/src/client/build .
+CMD ["serve", "-p", "4000", "-s", "."]
+
+# production setup
+# FROM nginx:1.12-alpine
+# COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]

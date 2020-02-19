@@ -1,9 +1,3 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
 let app = require('./app');
 let debug = require('debug')('express-react:server');
 let http = require('http');
@@ -19,7 +13,7 @@ require("./startup/db")();
  * Get port from environment and store in Express.
  */
 
-let port = normalizePort(process.env.PORT || '3001');
+let port = normalizePort(process.env.APP_SERVER_PORT || '3001');
 app.set('port', port);
 
 /**

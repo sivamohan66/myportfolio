@@ -5,7 +5,6 @@ config.authKey = process.env.AUTH_KEY || "[the PRIMARY KEY value of your Azure C
 config.port = process.env.DB_PORT
 config.dbName = process.env.DB_NAME
 
-
 if (config.host.includes("https://localhost:")) {
   console.log("Local environment detected");
   console.log("WARNING: Disabled checking of self-signed certs. Do not have this code in production.");
