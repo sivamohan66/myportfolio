@@ -2,35 +2,58 @@ import React, { Component } from 'react';
 import './App.css';
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Main from '../main';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <div className="demo-big-content">
+      <main>
         <Layout>
-          <Header className="header-color" title={<Link style={{ textDecoration: 'None', fontWeight: 'bold', color: 'white' }} to="/">MyPortfolio</Link>} scroll>
+          <Header className="bg-dark" title={<NavLink style={{ textDecoration: 'None', fontWeight: 'bold', color: 'white' }} to="/" activeClassName="selected">MyPortfolio</NavLink>} scroll>
             <Navigation>
-              <Link to="/resume">Resume</Link>
-              <Link to="/aboutme">About Me</Link>
-              <Link to="/projects">Projects</Link>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/resume" activeStyle={{
+                fontWeight: "bold",
+                color: "red"
+              }}>Resume</NavLink>
+              <NavLink to="/aboutme" activeStyle={{
+                fontWeight: "bold",
+                color: "blue"
+              }}>About Me</NavLink>
+              <NavLink to="/projects" activeStyle={{
+                fontWeight: "bold",
+                color: "yellow"
+              }}>Projects</NavLink>
+              <NavLink to="/contact" activeStyle={{
+                fontWeight: "bold",
+                color: "green"
+              }}>Contact</NavLink>
             </Navigation>
           </Header>
-          <Drawer title={<Link style={{ color: 'black', fontWeight: 'bold' }} to="/">MyPortfolio</Link>}>
+          <Drawer title={<NavLink style={{ color: 'black', fontWeight: 'bold' }} to="/" activeClassName="selected">MyPortfolio</NavLink>}>
             <Navigation>
-              <Link to="/resume" >Resume</Link>
-              <Link to="/aboutme">About Me</Link>
-              <Link to="/projects">Projects</Link>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/resume" activeStyle={{
+                fontWeight: "bold",
+                color: "red"
+              }}>Resume</NavLink>
+              <NavLink to="/aboutme" activeStyle={{
+                fontWeight: "bold",
+                color: "blue"
+              }}>About Me</NavLink>
+              <NavLink to="/projects" activeStyle={{
+                fontWeight: "bold",
+                color: "yellow"
+              }}>Projects</NavLink>
+              <NavLink to="/contact" activeStyle={{
+                fontWeight: "bold",
+                color: "green"
+              }}>Contact</NavLink>
             </Navigation>
           </Drawer>
           <Content>
-            <div className="page-content" />
             <Main />
           </Content>
         </Layout>
-      </div>
+      </main>
 
     );
   }
