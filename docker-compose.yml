@@ -29,4 +29,5 @@ services:
       - ./client/public:/usr/src/client/public
     links:
       - server
-    command: serve -p ${REACT_APP_PORT} -s .
+    # command: serve -p ${REACT_APP_PORT} -s .
+    command: yarn start
