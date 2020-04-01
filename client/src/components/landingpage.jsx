@@ -56,13 +56,15 @@ class Landing extends Component {
 
   render() {
     return (
-      <main className="container">
-        <Grid className="">
-          <Cell col={12}>
-            <ProfileImage />
-            {this.details()}
-          </Cell>
-        </Grid>
+      <main className="container-fluid bg">
+        <section className="container">
+          <Grid>
+            <Cell col={12}>
+              <ProfileImage />
+              {this.details()}
+            </Cell>
+          </Grid>
+        </section>
       </main>
     )
   }
