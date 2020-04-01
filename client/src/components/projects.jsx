@@ -43,33 +43,60 @@ class Projects extends Component {
     };
   }
 
-  webApp = (webProjectList = []) => {
-    return (
-      <div className="row justify-content-center">
-        {
-          webProjectList.map((project, index) =>
-            <Cards data={project} key={index} />
-          )
-        }
-      </div>
-    )
-  }
 
   toggleCategories() {
 
     if (this.state.activeTab === 0) {
-      return this.webApp(this.state.web)
-    } else if (this.state.activeTab === 1) {
+      let webProjectList = this.state.web
       return (
-        <div><h1>This is Angular</h1></div>
+        <div className="container">
+          <div className="card-columns">
+            {
+              webProjectList.map((project, index) =>
+                <Cards data={project} key={index} />
+              )
+            }
+          </div>
+        </div>
+      )
+    } else if (this.state.activeTab === 1) {
+      let webProjectList = this.state.web
+      return (
+        <div className="container">
+          <div className="card-columns">
+            {
+              webProjectList.map((project, index) =>
+                <Cards data={project} key={index} />
+              )
+            }
+          </div>
+        </div>
       )
     } else if (this.state.activeTab === 2) {
+      let webProjectList = this.state.web
       return (
-        <div><h1>This is VueJS</h1></div>
+        <div className="container">
+          <div className="card-columns">
+            {
+              webProjectList.map((project, index) =>
+                <Cards data={project} key={index} />
+              )
+            }
+          </div>
+        </div>
       )
     } else if (this.state.activeTab === 3) {
+      let webProjectList = this.state.web
       return (
-        <div><h1>This is MongoDB</h1></div>
+        <div className="container">
+          <div className="card-columns">
+            {
+              webProjectList.map((project, index) =>
+                <Cards data={project} key={index} />
+              )
+            }
+          </div>
+        </div>
       )
     }
 

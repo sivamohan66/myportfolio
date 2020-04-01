@@ -7,17 +7,15 @@ class Cards extends Component {
   }
   render() {
     return (
-      <div className="col-4-lg col-6-sm col-xs-12 mx-3 my-2">
-        <div className="card" style={{ "width": "24rem" }}>
-          < img src="https://picsum.photos/200" alt="Card Image" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">{this.props.data.name}</h5>
-            <p className="card-text">
-              {this.props.data.description}
-            </p>
-            <a href={this.props.data.link} className="btn btn-primary">View</a>
-          </div>
-        </div >
+      <div className="card">
+        < img className="card-img-top img-fluid" src="https://picsum.photos/200" alt="Card Image" />
+        <div className="card-body">
+          <h4 className="card-title">{this.props.data.name}</h4>
+          <p className="card-text">
+            {this.props.data.description}
+          </p>
+          <p className="card-text"><a href={this.props.data.link} target="_blank"><small className="text-muted">{this.props.data.link}</small></a></p>
+        </div>
       </div >
     );
   }
