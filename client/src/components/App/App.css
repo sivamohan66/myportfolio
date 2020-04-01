@@ -149,6 +149,12 @@
     font-size: 1.75em;
     font-weight: bolder;
   }
+
+  h2.name {
+    font-size: 1.75em;
+    font-weight: bolder;
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 900px) {
