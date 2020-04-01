@@ -5,11 +5,11 @@ import { Grid, Cell } from 'react-mdl';
 class Landing extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Grid className="landing-grid">
           <Cell col={12}>
             <img
-              src="/images/me.jpg" alt="avatar" className="avatar-img"
+              src="/images/me.jpg" alt="avatar" className="avatar-img image-fluid"
             />
 
             <div className="banner-text">
