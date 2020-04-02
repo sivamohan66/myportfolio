@@ -19,6 +19,39 @@ class Contact extends Component {
         "fa fa-fax": "  ------",
         "fa fa-skype": "  denyshubh"
       },
+      socialChannels: [{
+        name: 'github',
+        iconClass: 'github',
+        URL: "https://github.com/denyshubh"
+      }, {
+        name: 'free code camp',
+        iconClass: 'fire',
+        URL: "https://freecodecamp.com/"
+      }, {
+        name: 'codepen',
+        iconClass: 'codepen',
+        URL: "https://codepen.io/"
+      }, {
+        name: 'stack-overflow',
+        iconClass: 'stack-overflow',
+        URL: "https://stackoverflow.com/users/9609322/shubham-singh"
+      }, {
+        name: 'linkedin',
+        iconClass: 'linkedin',
+        URL: "https://www.linkedin.com/in/denyshubham"
+      }, {
+        name: 'google-plus',
+        iconClass: 'google-plus',
+        URL: "https://google.com/"
+      }, {
+        name: 'facebook',
+        iconClass: 'facebook',
+        URL: "https://www.facebook.com/denyshubham"
+      }, {
+        name: 'twitter',
+        iconClass: 'twitter',
+        URL: "https://twitter.com/"
+      }]
     };
 
   }
@@ -39,10 +72,29 @@ class Contact extends Component {
     )
   }
 
+  socialButtons = (items = []) => (
+    <section className="pages">
+      <div className="Contact" id="Contact">
+        <div className="row icon-wrappers-container">
+          <div className="centered-icons">
+            {items.map((ch, index) =>
+              <div className="col-3 ml-5 social-icons-wrapper" key={index}>
+                <a className={ch.iconClass} data-name={ch.name} href={ch.URL} target="_blank">
+                  <i className={'fa fa-' + ch.iconClass}>
+                  </i>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+
   render() {
     return (
-      <main className="">
-        <Grid className="">
+      <main>
+        <Grid>
           <Cell col={6} shadow={4}>
             <section className="jumbotron bg-gradient-info">
               <article className="container d-flex flex-column  justify-content-center">
@@ -69,10 +121,8 @@ class Contact extends Component {
               {this.contact(this.state.icons)}
             </div>
           </Cell>
-          <Cell col={3} hidePhone hideTablet>
-            <figure>
-              <img src="/images/tomato.png" alt="tomato pic" />
-            </figure>
+          <Cell col={3} hidePhone hideTablet className="pages">
+            {this.socialButtons(this.state.socialChannels)}
           </Cell>
         </Grid>
       </main>

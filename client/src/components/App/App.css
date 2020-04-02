@@ -109,3 +109,108 @@
     font-family: 'Anton'
   }
 }
+
+
+/* TEST SCRIPT */
+
+.pages .Contact {
+  margin: 10px;
+}
+
+.pages .Contact .icon-wrappers-container {
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.pages .Contact .icon-wrappers-container .social-icons-wrapper {
+  margin: 5px;
+}
+
+.pages .Contact .icon-wrappers-container:hover {
+  overflow: hidden;
+}
+
+.pages .Contact .icon-wrappers-container a {
+  font-size: 25px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: block;
+  margin: 20px calc(50% - 21px);
+  white-space: nowrap;
+  padding: 10px;
+  padding-top: 9px;
+  padding-left: 14px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.1s cubic-bezier(0.64, 0.09, 0.08, 1);
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pages .Contact .icon-wrappers-container a i {
+  margin-right: 20px;
+  transition: margin-right 0.1s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+.pages .Contact .icon-wrappers-container a:hover {
+  width: 160px;
+  z-index: 1000;
+  transform: translateX(-50px);
+}
+
+.pages .Contact .icon-wrappers-container a:hover i {
+  margin-right: 10px;
+}
+
+.pages .Contact .icon-wrappers-container a:hover:after {
+  content: attr(data-name);
+}
+
+.pages .Contact a.linkedin {
+  background: #4875b4;
+}
+
+.pages .Contact a.twitter {
+  background: #03a9f4;
+}
+
+.pages .Contact a.stack-overflow {
+  background: #fe7a15;
+}
+
+.pages .Contact a.stack-overflow:hover {
+  width: 220px;
+}
+
+.pages .Contact a.facebook {
+  background: #3b5998;
+  padding-left: 18px;
+}
+
+.pages .Contact a.github {
+  background: #333;
+}
+
+.pages .Contact a.codepen {
+  background: #000;
+  padding-left: 12px;
+}
+
+.pages .Contact a.google-plus {
+  background: #c63d2d;
+}
+
+.pages .Contact a.google-plus:hover {
+  width: 200px;
+}
+
+.pages .Contact a.fire {
+  background: green;
+}
+
+.pages .Contact a.fire:hover {
+  width: 250px;
+}
