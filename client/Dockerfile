@@ -11,15 +11,14 @@ RUN yarn
 # Bundle client source
 COPY . /usr/src/client
 
-# RUN yarn run build
-CMD ["yarn", "start"]
-
-# FROM mhart/alpine-node
-# RUN yarn global add serve
-# WORKDIR /usr/src/client
-# COPY --from=builder /usr/src/client/build .
-# CMD ["serve", "-p", "4000", "-s", "."]
+RUN yarn run build
 # CMD ["yarn", "start"]
+
+FROM mhart/alpine-node
+RUN yarn global add serve
+WORKDIR /usr/src/client
+COPY --from=builder /usr/src/client/build .
+CMD ["serve", "-p", "4000", "-s", "."]
 
 # production setup
 # FROM nginx:1.12-alpine
