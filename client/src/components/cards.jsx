@@ -8,7 +8,7 @@ class Cards extends Component {
   render() {
     return (
       <div className="card">
-        < img className="card-img-top img-fluid" src="https://picsum.photos/200" alt="Card Image" />
+        < img className="card-img-top img-fluid" src="https://picsum.photos/200" alt="project pic" />
         <div className="card-body">
           <h4 className="card-title">{this.props.data.name}</h4>
           <p className="card-text">
